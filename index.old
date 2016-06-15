@@ -1,0 +1,44 @@
+<?php
+class Maclasse {
+	// propriétés d'instances
+	public $a = 1; // visibilité publique : cette propriete est accessible depuis l'exterieur de la classe
+	protected $b = "test"; // visibilité protected : accessible seulement à l'interieur de la classe et de sa descendance
+	private $c;
+
+	function __construct($arg1, $arg2, $arg3) {
+		$this->a = $arg1;
+		$this->b = $arg2;
+		$this->c = $arg3;
+	}
+
+	/*// assez peu utilisé
+	function __destruct(){
+		echo "je meurs...";
+		// ici on fait des fonctions liés à la destruction de l'objet
+	}*/
+
+	// méthodes d'instances
+	public function afficheA(){
+		echo $this->a;
+	}
+
+	protected function getC(){
+		return $this->c;
+	}
+
+	public function afficheC(){
+		var_dump($this->getC());
+	}
+}
+
+$objet_1 = new MaClasse(2, "toto", [1,2,3,]);
+$objet_2 = new Maclasse(3, "titi", [4,5,6]);
+// $objet_1->afficheA();
+// $objet_2->afficheA();
+
+$objet_1->afficheC();
+// $objet_2->a = 10;
+// $objet_2->b = "test";
+// var_dump($objet_1);
+// var_dump($objet_2);
+
