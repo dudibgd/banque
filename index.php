@@ -1,20 +1,14 @@
 <?php
 
+require "classes/Vehicule.php";
 require "classes/Automobile.php";
+require "classes/Moto.php";
 
-$mon_auto = new Automobile(180);
-$mon_auto->demarrer();
-$mon_auto->etat();
-$mon_auto->accellerer(100);
-$mon_auto->arreter();
-$mon_auto->etat();
+$auto = new Automobile(5); 
+$auto->affiche();
+echo '<br>';
+$moto = new Moto();
+$moto->affiche();
 
-$mon_auto->bonjour();
+// nombreDeRoues(); // comment ca marche cet affichage?!?
 
-// Automobile::$langue = "en"; 
-Automobile::changerLangue("en");
-
-
-$my_car = new Automobile(200);
-$my_car->bonjour();
-$mon_auto->bonjour();
